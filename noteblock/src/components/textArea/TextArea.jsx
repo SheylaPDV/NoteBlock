@@ -5,7 +5,7 @@ function TextArea() {
   return (
     <>
       <table className="text-area-table">
-        <textarea placeholder="Escribe aquí" className="text-area" />
+        <textarea placeholder="No te olvides de..." className="text-area" />
         <SaveButton></SaveButton>
       </table>
     </>

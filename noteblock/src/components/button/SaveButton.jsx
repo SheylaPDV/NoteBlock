@@ -1,9 +1,14 @@
 import "./saveButton.css";
-
+function boton() {
+  return console.log("hola");
+}
 function SaveButton() {
   return (
     <div className="area-save-button">
-      <button className="save-button">Guardar y añadir</button>;
+      <button onClick={boton} className="save-button">
+        <i>Guardar y añadir</i>
+      </button>
+      ;
     </div>
   );
 }
