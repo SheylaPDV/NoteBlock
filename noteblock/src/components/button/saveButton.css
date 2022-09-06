@@ -1,0 +1,16 @@
+.save-button {
+  background-color: transparent;
+  color: aliceblue;
+  cursor: pointer;
+  border: solid 2px rgb(38, 151, 106);
+  width: 130px;
+  height: 40px;
+  border-radius: 30px;
+  margin-top: 30px;
+}
+
+.save-button:hover {
+  background-color: rgb(38, 151, 106);
+  /* border: none; */
+  transition: 1s;
+}
