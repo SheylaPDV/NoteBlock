@@ -8,12 +8,6 @@
 npm install
 ```
 
-## initialize noteblock application
-
-```
-npm start
-```
-
 ## Initialize backend
 
 ```
