@@ -5,7 +5,7 @@ import Index from "./pages";
 
 function App() {
   return (
-    <div className="container ">
+    <div className="container bg-success">
       <Index />
     </div>
   );
