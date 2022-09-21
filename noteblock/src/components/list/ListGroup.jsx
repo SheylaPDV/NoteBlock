@@ -1,16 +1,5 @@
 import React from "react";
 
 export default function ListGroup() {
-  return (
-    <ol className="list-group list-group-numbered">
-      <li className="list-group-item d-flex justify-content-between align-items-start">
-        <div className="ms-2 me-auto">
-          <div className="fw-bold">Subheading</div>
-          Cras justo odio
-        </div>
-        <button className="btn btn-info btn-sm">Edit</button>
-        <button className="btn btn-outline-danger btn-sm">Delete</button>
-      </li>
-    </ol>
-  );
+  return <ol className="list-group list-group-numbered"></ol>;
 }
