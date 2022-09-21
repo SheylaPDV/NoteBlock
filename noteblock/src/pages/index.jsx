@@ -3,13 +3,14 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Form from "../components/form/Form";
 import ListGroup from "../components/list/ListGroup";
+import Notes from "../components/notes/Notes";
 
 export default function Index() {
-  const [notas, setNotas] = useState([]);
+  const [notes, setNotes] = useState([]);
   const getNotes = async () => {
-    const response = await fetch("http://localhost:3001/api/v1/notes");
+    const response = await fetch(process.env.MONGO_DB_URI);
     const result = await response.json();
-    console.log(result);
+    setNotes(result);
   };
 
   // traer datos
@@ -24,7 +25,16 @@ export default function Index() {
           <Form />
         </div>
         <div className="col-sm-12 col-md-8">
-          <ListGroup />
+          <ListGroup>
+            {/* {notes.map((note, index) => ( */}
+            <Notes
+            // key={index}
+            // id={note._id}
+            // title={note.title}
+            // content={note.content}
+            />
+            {/* ))} */}
+          </ListGroup>
         </div>
       </div>
     </div>
