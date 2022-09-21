@@ -6,7 +6,7 @@ export default function Form() {
       <div className="card-header">Add note</div>
       <div className="card-body">
         <form action="">
-          <div className="form-group">
+          <div className="form-group mb-3">
             <input
               name="title"
               type="text"
@@ -14,7 +14,7 @@ export default function Form() {
               className="form-control"
             />
           </div>
-          <div className="form-group">
+          <div className="form-group mb-3">
             <textarea
               name="content"
               placeholder="Task content"

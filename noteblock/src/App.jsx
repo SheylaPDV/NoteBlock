@@ -5,7 +5,8 @@ import Index from "./pages";
 
 function App() {
   return (
-    <div className="container bg-success">
+    <div className="container py-5">
+      <h3>NoteBlock</h3>
       <Index />
     </div>
   );
