@@ -1,13 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Form() {
+  const [note, setNote] = useState({
+    title: "",
+    content: "",
+  });
+
+  const handleChange = (e) => {
+    let newNote = {
+      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value,
+    };
+    setNote({ ...note, ...newNote });
+  };
+
+  const saveNote = async () => {
+    await fetch("http://localhost:3001/api/v1/notes", {
+      method: "POST",
+      mode: "cors",
+      body: JSON.stringify(note),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    saveNote();
+  };
   return (
     <div className="card">
       <div className="card-header">Add note</div>
       <div className="card-body">
-        <form action="">
+        <form action="" onSubmit={onSubmit}>
           <div className="form-group mb-3">
             <input
+              onChange={handleChange}
               name="title"
               type="text"
               placeholder="Title"
@@ -16,6 +45,7 @@ export default function Form() {
           </div>
           <div className="form-group mb-3">
             <textarea
+              onChange={handleChange}
               name="content"
               placeholder="Task content"
               className="form-control"
