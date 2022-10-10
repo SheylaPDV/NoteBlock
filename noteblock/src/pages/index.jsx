@@ -8,7 +8,7 @@ import Notes from "../components/notes/Notes";
 export default function Index() {
   const [notes, setNotes] = useState([]);
   const getNotes = async () => {
-    const response = await fetch(process.env.MONGO_DB_URI);
+    const response = await fetch("http://localhost:3001/api/v1/notes");
     const result = await response.json();
     setNotes(result);
   };
@@ -17,7 +17,7 @@ export default function Index() {
 
   useEffect(() => {
     getNotes();
-  }, []);
+  }, [notes]);
   return (
     <div className="content-app ">
       <div className="row ">

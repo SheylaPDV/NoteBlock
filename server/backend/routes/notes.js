@@ -1,6 +1,6 @@
 const Note = require("../models/Notes");
 var express = require("express");
-const { getNotes, sendNotes } = require("../controllers/notes");
+// const { getNotes, sendNotes } = require("../controllers/notes");
 var router = express.Router();
 
 router.get("/", async (req, res, next) => {
