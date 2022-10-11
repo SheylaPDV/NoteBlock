@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 export default function Form({ props }) {
+  //   const [variable, metodo que actualiza la variable] = useState(estado incial)
+
   const [note, setNote] = useState({
     title: "",
     content: "",
