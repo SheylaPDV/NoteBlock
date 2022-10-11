@@ -1,20 +1,18 @@
+import { useEffect, useState } from "react";
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import Form from "../components/form/form";
+
+import { getLastedNotes } from "../components/service";
 import ListGroup from "../components/list/ListGroup";
 import Notes from "../components/notes/Notes";
-import { getLastedNotes } from "../components/service";
+import Form from "../components/form/form";
 
-export default function Index() {
+export const Index = () => {
   const [notes, setNotes] = useState([]);
   const getNotes = async () => {
     const response = await fetch("http://localhost:3001/api/v1/notes");
     const result = await response.json();
     setNotes(result);
   };
-
-  // traer datos
 
   useEffect(() => {
     getNotes();
@@ -27,7 +25,6 @@ export default function Index() {
         <div className="col-sm-12 col-md-4">
           <Form />
         </div>
-        {/* <p>{notes.result[0].title}</p> */}
         <div className="col-sm-12 col-md-8">
           {notes.result ? (
             <ListGroup>
@@ -38,13 +35,13 @@ export default function Index() {
                   title={note.title}
                   content={note.content}
                 />
-              ))}{" "}
+              ))}
             </ListGroup>
           ) : (
-            <p>hola</p>
+            <h3>There is nothing to show</h3>
           )}
         </div>
       </div>
     </div>
   );
-}
+};
