@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Notes({ title, content, id }) {
+export default function Notes({ notes, title, content, _id }) {
   return (
     <li className="list-group-item d-flex justify-content-between align-items-start ">
       <div className="ms-2 me-auto">

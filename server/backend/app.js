@@ -1,32 +1,31 @@
+var cookieParser = require("cookie-parser");
 var createError = require("http-errors");
 var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-const router = require("router");
-require("dotenv").config();
-var mongoose = require("mongoose");
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
 const cors = require("cors");
+var path = require("path");
+require("dotenv").config();
+
 const notesRouter = require("./routes/notes");
-var app = express();
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const app = express();
 require("./data/connect_mongodb");
 
 // Config
-
 // Middleware
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
-app.use(logger("dev"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(cookieParser());
+app.use(logger("dev"));
 app.use(cors());
 
+// API v1 routes
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/api/v1/notes", notesRouter);

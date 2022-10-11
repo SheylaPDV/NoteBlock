@@ -13,17 +13,15 @@ router.get("/", async (req, res, next) => {
 });
 
 router.post("/", async (req, res, next) => {
-  const note = new Note({
-    title: req.body.title,
-    content: req.body.content,
-  });
   try {
-    const savedNote = await note.save();
-    res.json({
-      data: savedNote,
-    });
-  } catch (error) {
-    res.status(400).json({ error });
+    const noteData = req.body;
+    const date = new Date();
+    noteData.date = date;
+    const note = new Note(noteData);
+    const savednote = await note.save();
+    res.status(201).json({ result: savednote });
+  } catch (err) {
+    next(err);
   }
 });
 module.exports = router;

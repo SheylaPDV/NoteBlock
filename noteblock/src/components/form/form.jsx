@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Form() {
+export default function Form({ props }) {
   const [note, setNote] = useState({
     title: "",
     content: "",

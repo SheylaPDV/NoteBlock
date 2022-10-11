@@ -8,6 +8,8 @@
 npm install
 ```
 
+## Copiar archivo .env.example y cambiar el nombre a .env
+
 ## Initialize backend
 
 ```
