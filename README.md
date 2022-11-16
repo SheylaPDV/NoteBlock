@@ -1,6 +1,6 @@
 # NoteBlock App.
 
-This application is created with ReactJS and Bootstrap for the frontend and ExpressJS and MongoDB for the backend.
+Development application created with ReactJS and Bootstrap for the frontend and ExpressJS and MongoDB for the backend.
 
 ## install dependencies
 ```
