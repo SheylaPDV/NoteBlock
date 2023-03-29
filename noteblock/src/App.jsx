@@ -11,7 +11,7 @@ function App() {
     <div className="container py-5">
       <h3>NoteBlock</h3>
       {/* <Greting /> */}
-      <Increment />
+      {/* <Increment /> */}
       <Index />
     </div>
   );

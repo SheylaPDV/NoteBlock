@@ -11,6 +11,7 @@ mongoose.connection.once("open", () => {
   console.log("Connected to mongo in the database:", mongoose.connection.name);
 });
 
+console.log(process.env.MONGO_DB_URI);
 mongoose.connect(process.env.MONGO_DB_URI);
 
 module.exports = mongoose.connection;
